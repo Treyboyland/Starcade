@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3855939285373877523
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 859141608095691673, guid: 86b060488e527e843b88c53e31b53089,
+        type: 3}
+      propertyPath: asteroidSpawns.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 859141608095691673, guid: 86b060488e527e843b88c53e31b53089,
+        type: 3}
+      propertyPath: CurrentHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 859141608095691673, guid: 86b060488e527e843b88c53e31b53089,
+        type: 3}
+      propertyPath: velocityRange.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 859141608095691673, guid: 86b060488e527e843b88c53e31b53089,
+        type: 3}
+      propertyPath: asteroidSpawns.Array.data[0].Mono
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 859141608095691673, guid: 86b060488e527e843b88c53e31b53089,
+        type: 3}
+      propertyPath: velocityRange.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 859141608095691673, guid: 86b060488e527e843b88c53e31b53089,
+        type: 3}
+      propertyPath: velocityRange.z
+      value: -0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 859141608095691673, guid: 86b060488e527e843b88c53e31b53089,
+        type: 3}
+      propertyPath: velocityRange.w
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 859141608095691673, guid: 86b060488e527e843b88c53e31b53089,
+        type: 3}
+      propertyPath: spawnMoreOnDeath
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 859141608095691673, guid: 86b060488e527e843b88c53e31b53089,
+        type: 3}
+      propertyPath: MaxHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 859141608095691675, guid: 86b060488e527e843b88c53e31b53089,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 859141608095691675, guid: 86b060488e527e843b88c53e31b53089,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 859141608095691675, guid: 86b060488e527e843b88c53e31b53089,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 859141608095691675, guid: 86b060488e527e843b88c53e31b53089,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 859141608095691675, guid: 86b060488e527e843b88c53e31b53089,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 859141608095691675, guid: 86b060488e527e843b88c53e31b53089,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 859141608095691675, guid: 86b060488e527e843b88c53e31b53089,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 859141608095691675, guid: 86b060488e527e843b88c53e31b53089,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 859141608095691675, guid: 86b060488e527e843b88c53e31b53089,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 859141608095691675, guid: 86b060488e527e843b88c53e31b53089,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 859141608095691675, guid: 86b060488e527e843b88c53e31b53089,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 859141608095691675, guid: 86b060488e527e843b88c53e31b53089,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 859141608095691675, guid: 86b060488e527e843b88c53e31b53089,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 859141608095691675, guid: 86b060488e527e843b88c53e31b53089,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 859141608095691678, guid: 86b060488e527e843b88c53e31b53089,
+        type: 3}
+      propertyPath: m_Name
+      value: Asteroid Small
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 86b060488e527e843b88c53e31b53089, type: 3}

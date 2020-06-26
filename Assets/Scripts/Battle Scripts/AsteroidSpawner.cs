@@ -14,6 +14,9 @@ public class AsteroidSpawner : MonoBehaviour
     Vector2 spawnRangeSeconds = new Vector2();
 
     [SerializeField]
+    Vector2 initialWaitRangeSeconds = new Vector2();
+
+    [SerializeField]
     Vector2 quickSpawnRangeSeconds = new Vector2();
 
     [SerializeField]
@@ -43,16 +46,16 @@ public class AsteroidSpawner : MonoBehaviour
 
     IEnumerator SpawnStuff()
     {
+        yield return new WaitForSeconds(UnityEngine.Random.Range(initialWaitRangeSeconds.x, initialWaitRangeSeconds.y));
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(spawnRangeSeconds.x, spawnRangeSeconds.y));
             int count = UnityEngine.Random.Range(spawnCount.x, spawnCount.y);
             for (int i = 0; i < count; i++)
             {
                 SpawnAsteriod();
                 yield return new WaitForSeconds(UnityEngine.Random.Range(quickSpawnRangeSeconds.x, quickSpawnRangeSeconds.y));
             }
-
+            yield return new WaitForSeconds(Random.Range(spawnRangeSeconds.x, spawnRangeSeconds.y));
             yield return null;
         }
     }

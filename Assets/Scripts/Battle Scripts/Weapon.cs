@@ -5,6 +5,20 @@ using UnityEngine.Events;
 
 public class Weapon : MonoBehaviour
 {
+    ShipInfo ship = null;
+
+    public ShipInfo Ship
+    {
+        get
+        {
+            return ship;
+        }
+        set
+        {
+            ship = value;
+        }
+    }
+
     [SerializeField]
     protected Bullet bulletPrefab = null;
 
@@ -34,6 +48,20 @@ public class Weapon : MonoBehaviour
 
     protected float elapsed = 0;
 
+    [SerializeField]
+    bool isPlayerControlled = false;
+
+    [SerializeField]
+    bool triggerFire = false;
+
+    private void Start()
+    {
+        if (isPlayer)
+        {
+            ship = GetComponent<PlayerShip>();
+        }
+    }
+
     // Update is called once per frame
     protected virtual void Update()
     {
@@ -51,13 +79,35 @@ public class Weapon : MonoBehaviour
 
     protected virtual bool CanFire()
     {
-        return elapsed >= fireRate;
+        if (ship != null && ship.CurrentAmmo <= 0)
+        {
+            return false;
+        }
+        if (isPlayerControlled)
+        {
+            if (triggerFire)
+            {
+                return Input.GetButtonDown("Fire");
+            }
+            else
+            {
+                return elapsed >= fireRate;
+            }
+        }
+        else
+        {
+            return elapsed >= fireRate;
+        }
     }
 
-    protected virtual void FireWeapon()
+    public virtual void FireWeapon()
     {
         if (CanFire())
         {
+            if (ship != null)
+            {
+                ship.DecrementAmmo();
+            }
             elapsed = 0;
             foreach (var data in isPlayer ? offsetsPlayer : offsetsEnemy)
             {

@@ -1,30 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class BulletHitParticleController : MonoBehaviour
+public class ShipDeathParticleController : MonoBehaviour
 {
     [SerializeField]
     DisableAfterParticleFinished prefab = null;
 
     GamePool pool;
 
-    public Vector3Event OnSpawnAtLocation = new Vector3Event();
+    public DeathEvent OnSpawnAtLocation = new DeathEvent();
 
     // Start is called before the first frame update
     void Start()
     {
         pool = GamePool.Instance;
         OnSpawnAtLocation.AddListener(SpawnParticle);
-        Bullet.ParticleController = this;
+        ShipInfo.ParticleController = this;
     }
 
-    void SpawnParticle(Vector3 pos)
+    void SpawnParticle(Vector3 pos, Color color, bool isShip)
     {
+        color = isShip ? color : Color.white;
         //Debug.LogWarning("Spawning particle at location " + pos);
         var obj = (DisableAfterParticleFinished)pool.GetObject(prefab);
+        
         obj.transform.position = pos;
+        obj.SetColor(color);
         obj.gameObject.SetActive(true);
     }
 }

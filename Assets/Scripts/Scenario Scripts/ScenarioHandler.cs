@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 public class ScenarioHandler : MonoBehaviour
 {
+    [SerializeField]
+    TextMeshProUGUI scenarioText = null;
+
     [SerializeField]
     List<ScenarioButtonController> buttonControllers = new List<ScenarioButtonController>();
 
@@ -12,21 +16,26 @@ public class ScenarioHandler : MonoBehaviour
 
     IntEvent OnScenarioSelected = new IntEvent();
 
+    ScenarioButtonController scenarioLayout = null;
+
     private void Awake()
     {
-        OnNewScenario.AddListener(StartScenario);    
+        OnNewScenario.AddListener(StartScenario);
     }
 
     void StartScenario(Scenario scenario)
     {
-        for(int i = 0; i < buttonControllers.Count; i++)
+        scenarioText.text = scenario.Description;
+
+        for (int i = 0; i < buttonControllers.Count; i++)
         {
             bool chosen = i == scenario.Actions.Count;
             buttonControllers[i].gameObject.SetActive(chosen);
             buttonControllers[i].GetComponent<SelectOnButtonPressed>().ShouldRunCheck = chosen;
-            if(chosen)
+            if (chosen)
             {
-                for(int k = 0; k < buttonControllers[i].Buttons.Length; k ++)
+                scenarioLayout = buttonControllers[i];
+                for (int k = 0; k < buttonControllers[i].Buttons.Length; k++)
                 {
                     var button = buttonControllers[i].Buttons[k];
                     button.OnActionChosen.AddListener((num) => OnScenarioSelected.Invoke(num));
@@ -34,5 +43,7 @@ public class ScenarioHandler : MonoBehaviour
                 }
             }
         }
+
+        
     }
 }

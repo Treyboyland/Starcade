@@ -7,9 +7,21 @@ public class DisableAfterParticleFinished : MonoBehaviour
     [SerializeField]
     ParticleSystem ps = null;
 
+    [SerializeField]
+    List<ParticleSystem> particleSystems = null;
+
     private void OnEnable()
     {
         StartCoroutine(DisableAfterDone());
+    }
+
+    public void SetColor(Color c)
+    {
+        foreach (var particle in particleSystems)
+        {
+            var main = particle.main;
+            main.startColor = c;
+        }
     }
 
     IEnumerator DisableAfterDone()

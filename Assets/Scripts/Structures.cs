@@ -11,9 +11,27 @@ public struct MonoAndInt
 }
 
 
+[Serializable]
+public struct FactionTypeAndInt
+{
+    public FactionType Type;
+    public int Count;
+}
+
 public static class ListExtensions
 {
     public static int GetSum(this List<MonoAndInt> list)
+    {
+        int count = 0;
+        foreach (var item in list)
+        {
+            count += item.Count;
+        }
+
+        return count;
+    }
+
+    public static int GetSum(this List<FactionTypeAndInt> list)
     {
         int count = 0;
         foreach (var item in list)
@@ -40,5 +58,23 @@ public static class ListExtensions
         }
 
         return list.Count > 0 ? list[0].Mono : null;
+    }
+
+    public static FactionType GetRandomFactionType(this List<FactionTypeAndInt> list)
+    {
+        int count = 0;
+        int max = list.GetSum();
+        int target = UnityEngine.Random.Range(0, max + 1);
+
+        foreach (var item in list)
+        {
+            count += item.Count;
+            if (count >= target)
+            {
+                return item.Type;
+            }
+        }
+
+        return list.Count > 0 ? list[0].Type : FactionType.NONE;
     }
 }

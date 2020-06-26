@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     Rigidbody2D body = null;
 
-    [SerializeField]
     ShipInfo shipInfo = null;
 
     [SerializeField]
@@ -20,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        shipInfo = PlayerDataSingleton.Instance.Data.Ship;
     }
 
     private void FixedUpdate()

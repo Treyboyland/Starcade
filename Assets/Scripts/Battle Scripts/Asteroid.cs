@@ -33,18 +33,23 @@ public class Asteroid : ShipInfo
             UnityEngine.Random.Range(velocityRange.z, velocityRange.w));
     }
 
-    void SpawnMoreAsteroids()
+    void SpawnMoreAsteroids(int additionalDamage)
     {
+        int damagePerSpawn = additionalDamage != 0 ? Mathf.Max(1, additionalDamage / spawnCount) : 0;
         if (spawnMoreOnDeath)
         {
-            for(int i = 0; i < spawnCount; i++)
+            for (int i = 0; i < spawnCount; i++)
             {
                 var asteroid = (Asteroid)asteroidSpawns.GetRandomMonoBehaviour();
                 var spawned = pool.GetObject(asteroid);
                 Vector3 offset = new Vector3(UnityEngine.Random.Range(spawnOffset.x, spawnOffset.y),
-                    UnityEngine.Random.Range(spawnOffset.z, spawnOffset.w),0);
+                    UnityEngine.Random.Range(spawnOffset.z, spawnOffset.w), 0);
                 spawned.transform.position = transform.position + offset;
                 spawned.gameObject.SetActive(true);
+                if(damagePerSpawn != 0)
+                {
+                    ((Asteroid)spawned).DamageShip(damagePerSpawn);
+                }
             }
         }
 
@@ -52,10 +57,13 @@ public class Asteroid : ShipInfo
 
     public override void DamageShip(int amount)
     {
+        int previousHealth = CurrentHealth;
         CurrentHealth = Mathf.Max(0, CurrentHealth - amount);
         if (CurrentHealth == 0)
         {
-            SpawnMoreAsteroids();
+            int additionalDamage = amount - previousHealth;
+            SpawnParticle();
+            SpawnMoreAsteroids(additionalDamage);
             gameObject.SetActive(false);
         }
     }

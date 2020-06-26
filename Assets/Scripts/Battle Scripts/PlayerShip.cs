@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShip : MonoBehaviour
+public class PlayerShip : ShipInfo
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(PlayerDataSingleton.Instance != null)
+        {
+            this.SetData(PlayerDataSingleton.Instance.Data.Ship);
+        }
     }
 }

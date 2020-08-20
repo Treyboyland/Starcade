@@ -21,10 +21,12 @@ public class ShipDeathParticleController : MonoBehaviour
 
     void SpawnParticle(Vector3 pos, Color color, bool isShip)
     {
+        Debug.Log("Before: " + color);
         color = isShip ? color : Color.white;
+        Debug.Log("After: " + color);
         //Debug.LogWarning("Spawning particle at location " + pos);
         var obj = (DisableAfterParticleFinished)pool.GetObject(prefab);
-        
+
         obj.transform.position = pos;
         obj.SetColor(color);
         obj.gameObject.SetActive(true);

@@ -7,25 +7,43 @@ using TMPro;
 public class ScenarioHandler : MonoBehaviour
 {
     [SerializeField]
-    TextMeshProUGUI scenarioText = null;
+    TypeTextReveal scenarioText = null;
 
     [SerializeField]
     List<ScenarioButtonController> buttonControllers = new List<ScenarioButtonController>();
 
-    ScenarioEvent OnNewScenario = new ScenarioEvent();
+    public ScenarioEvent OnNewScenario = new ScenarioEvent();
 
-    IntEvent OnScenarioSelected = new IntEvent();
+    public IntEvent OnScenarioSelected = new IntEvent();
 
     ScenarioButtonController scenarioLayout = null;
 
     private void Awake()
     {
         OnNewScenario.AddListener(StartScenario);
+        HideAll();
+    }
+
+    void HideAll()
+    {
+        foreach (var controller in buttonControllers)
+        {
+            controller.gameObject.SetActive(false);
+        }
+        scenarioText.Hide();
+    }
+
+    void RevealButtons()
+    {
+        scenarioText.OnRevealComplete.RemoveListener(RevealButtons);
+        scenarioLayout.gameObject.SetActive(true);
+        scenarioLayout.GetComponentInChildren<SelectOnButtonPressed>().SelectDefaultObject();
     }
 
     void StartScenario(Scenario scenario)
     {
-        scenarioText.text = scenario.Description;
+        scenarioText.Text = scenario.Description;
+
 
         for (int i = 0; i < buttonControllers.Count; i++)
         {
@@ -41,9 +59,11 @@ public class ScenarioHandler : MonoBehaviour
                     button.OnActionChosen.AddListener((num) => OnScenarioSelected.Invoke(num));
                     button.Description = scenario.Actions[k];
                 }
+                scenarioLayout.gameObject.SetActive(false);
             }
         }
 
-        
+        scenarioText.OnRevealComplete.AddListener(RevealButtons);
+        scenarioText.StartReveal();
     }
 }

@@ -27,15 +27,18 @@ public class ShootOnSight : MonoBehaviour
         if (detected && !firing)
         {
             //Debug.LogWarning(gameObject.name + " detected player");
-            weapon.FireWeapon();
+            StartCoroutine(FireShots());
         }
     }
 
     IEnumerator FireShots()
     {
         firing = true;
+        int count = 0;
         foreach (var interval in secondsBetweenShots)
         {
+            count++;
+            //Debug.LogWarning(gameObject.name + ": Shot " + count);
             weapon.FireWeapon();
             yield return new WaitForSeconds(interval);
         }

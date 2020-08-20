@@ -47,4 +47,9 @@ public class SelectOnButtonPressed : MonoBehaviour
         }
         return false;
     }
+
+    public void SelectDefaultObject()
+    {
+        objectToSelect.Select();
+    }
 }

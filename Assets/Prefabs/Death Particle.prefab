@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ps: {fileID: 8281538020480261347}
+  particleSystems:
+  - {fileID: 8281538020480261347}
 --- !u!199 &8281538020480261348
 ParticleSystemRenderer:
   serializedVersion: 6

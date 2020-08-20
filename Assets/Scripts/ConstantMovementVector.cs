@@ -51,7 +51,10 @@ public class ConstantMovementVector : MonoBehaviour
         if (gameObject.activeInHierarchy)
         {
             rb2d = rb2d == null ? GetComponentInParent<Rigidbody2D>() : rb2d;
-            rb2d.velocity = Vector3.RotateTowards(movementVector, transform.up, 2 * Mathf.PI, 0);
+            var velocity = Vector3.RotateTowards(movementVector, transform.up, 2 * Mathf.PI, 0);
+            velocity.y *= (transform.up == -Vector3.up ? -1 : 1);
+            //Debug.LogWarning(transform.up);
+            rb2d.velocity = velocity;
         }
     }
 

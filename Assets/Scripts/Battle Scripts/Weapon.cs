@@ -23,10 +23,7 @@ public class Weapon : MonoBehaviour
     protected Bullet bulletPrefab = null;
 
     [SerializeField]
-    List<OffsetAndRotation> offsetsEnemy = new List<OffsetAndRotation>();
-
-    [SerializeField]
-    List<OffsetAndRotation> offsetsPlayer = new List<OffsetAndRotation>();
+    List<OffsetAndRotation> offsets = new List<OffsetAndRotation>();
 
     [SerializeField]
     protected bool isPlayer = false;
@@ -59,6 +56,11 @@ public class Weapon : MonoBehaviour
         if (isPlayer)
         {
             ship = GetComponent<PlayerShip>();
+        }
+        else
+        {
+            //Uncomment for enemies that track ammo
+            //ship = GetComponent<ShipInfo>();
         }
     }
 
@@ -96,7 +98,7 @@ public class Weapon : MonoBehaviour
         }
         else
         {
-            return elapsed >= fireRate;
+            return triggerFire || elapsed >= fireRate;
         }
     }
 
@@ -109,19 +111,20 @@ public class Weapon : MonoBehaviour
                 ship.DecrementAmmo();
             }
             elapsed = 0;
-            foreach (var data in isPlayer ? offsetsPlayer : offsetsEnemy)
+            foreach (var data in offsets)
             {
                 Bullet bullet = (Bullet)GamePool.Instance.GetObject(bulletPrefab);
                 bullet.IsPlayer = isPlayer;
+                //TODO: X Pos is getting coverted into y pos
+                // var offset = Vector3.RotateTowards(data.Offset, transform.up, 2 * Mathf.PI, 0);
+                // offset.y *= (transform.up == -Vector3.up ? -1 : 1);
+                // bullet.transform.position = transform.position +  offset;
+                // bullet.transform.rotation = transform.rotation; //Quaternion.AngleAxis(data.Rotation + angle, axis);
 
-                bullet.transform.position = transform.position + Vector3.RotateTowards(data.Offset, transform.up, 2 * Mathf.PI, 0);
-                float angle;
-                Vector3 axis = Vector3.up;
-                transform.rotation.ToAngleAxis(out angle, out axis);
-                //Debug.Log(transform.rotation.eulerAngles);
-                angle *= transform.rotation.eulerAngles.z < 180 ? 1 : -1;
-                bullet.transform.rotation = Quaternion.AngleAxis(data.Rotation + angle, transform.forward);
-
+                bullet.transform.SetParent(transform);
+                bullet.transform.localPosition = data.Offset;
+                bullet.transform.rotation = transform.rotation * Quaternion.AngleAxis(data.Rotation, Vector3.forward);
+                bullet.transform.SetParent(null);
                 bullet.gameObject.SetActive(true);
             }
         }

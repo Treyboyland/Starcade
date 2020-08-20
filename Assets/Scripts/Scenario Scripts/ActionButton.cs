@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(TextMeshProUGUI), typeof(Button))]
+[RequireComponent(typeof(Button))]
 public class ActionButton : MonoBehaviour
 {
     TextMeshProUGUI textBox = null;
@@ -47,7 +47,7 @@ public class ActionButton : MonoBehaviour
 
     private void Awake()
     {
-        textBox = GetComponent<TextMeshProUGUI>();
+        textBox = GetComponentInChildren<TextMeshProUGUI>();
         button = GetComponent<Button>();
         button.onClick.AddListener(() => OnActionChosen.Invoke(Id));
     }

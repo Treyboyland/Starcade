@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 971e868f8879d3c40840e4e7827773a2, type: 3}
+  m_Name: 00a Scenario Dog - Pet Roll
+  m_EditorClassIdentifier: 
+  Id: 0
+  DescriptiveTextSuccess: You pet the dog. The dog rolls over.
+  DescriptiveTextFailure: 
+  ButtonTextActive: Pet
+  ButtonTextDisabled: 
+  ShowIfUnableToUse: 0
+  Prerequisites: []
+  ChecksOnSelection: []
+  ActionsSuccess:
+  - {fileID: 11400000, guid: a36bb0e7a3935f148a93841e352f6489, type: 2}
+  ActionsFailure: []

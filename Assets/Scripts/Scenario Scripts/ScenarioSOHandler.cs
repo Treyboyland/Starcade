@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
 
-public class ScenarioHandler : MonoBehaviour
+public class ScenarioSOHandler : MonoBehaviour
 {
     [SerializeField]
     TypeTextReveal scenarioText = null;
@@ -12,19 +12,36 @@ public class ScenarioHandler : MonoBehaviour
     [SerializeField]
     List<ScenarioButtonController> buttonControllers = new List<ScenarioButtonController>();
 
-    public ScenarioEvent OnNewScenario = new ScenarioEvent();
-
-    public EmptyEvent OnScenarioComplete = new EmptyEvent();
+    public ScenarioSOEvent OnNewScenario = new ScenarioSOEvent();
 
     public IntEvent OnScenarioSelected = new IntEvent();
 
+    public EmptyEvent OnScenarioComplete = new EmptyEvent();
+
     ScenarioButtonController scenarioLayout = null;
+
+    ScenarioSO currentScenario;
 
     private void Start()
     {
         OnNewScenario.AddListener(StartScenario);
+        OnScenarioSelected.AddListener(ContinueScenario);
         OnScenarioComplete.AddListener(HideAll);
         HideAll();
+    }
+
+    void ContinueScenario(int selected)
+    {
+        Debug.LogWarning("Selected item: " + selected + " on scenario " + currentScenario.ToString());
+        if (currentScenario.ActionsSuccess.Count != 0)
+        {
+            RemoveButtonListeners();
+            StartScenario(currentScenario.ActionsSuccess[selected]);
+        }
+        else
+        {
+            OnScenarioComplete.Invoke();
+        }
     }
 
     void HideAll()
@@ -43,14 +60,32 @@ public class ScenarioHandler : MonoBehaviour
         scenarioLayout.GetComponentInChildren<SelectOnButtonPressed>().SelectDefaultObject();
     }
 
-    void StartScenario(Scenario scenario)
+    void InvokeScenarioSelectedEvent(int num)
     {
-        scenarioText.Text = scenario.Description;
+        OnScenarioSelected.Invoke(num);
+    }
+
+    void RemoveButtonListeners()
+    {
+        foreach (var button in scenarioLayout.Buttons)
+        {
+            button.OnActionChosen.RemoveListener(InvokeScenarioSelectedEvent);
+        }
+    }
+
+    void StartScenario(ScenarioSO scenario)
+    {
+        currentScenario = scenario;
+        scenarioText.Text = scenario.DescriptiveTextSuccess;
 
 
         for (int i = 0; i < buttonControllers.Count; i++)
         {
-            bool chosen = i == scenario.Actions.Count;
+            bool chosen = i == scenario.ActionsSuccess.Count;
+            if (chosen)
+            {
+                Debug.LogWarning("Chosen: " + i);
+            }
             buttonControllers[i].gameObject.SetActive(chosen);
             buttonControllers[i].GetComponent<SelectOnButtonPressed>().ShouldRunCheck = chosen;
             if (chosen)
@@ -59,8 +94,9 @@ public class ScenarioHandler : MonoBehaviour
                 for (int k = 0; k < buttonControllers[i].Buttons.Length; k++)
                 {
                     var button = buttonControllers[i].Buttons[k];
-                    button.OnActionChosen.AddListener((num) => OnScenarioSelected.Invoke(num));
-                    button.Description = scenario.Actions.Count != 0 ? scenario.Actions[k] : "END";
+                    button.Id = k;
+                    button.OnActionChosen.AddListener(InvokeScenarioSelectedEvent);
+                    button.Description = scenario.ActionsSuccess.Count != 0 ? scenario.ActionsSuccess[k].ButtonTextActive : "END";
                 }
                 scenarioLayout.gameObject.SetActive(false);
             }

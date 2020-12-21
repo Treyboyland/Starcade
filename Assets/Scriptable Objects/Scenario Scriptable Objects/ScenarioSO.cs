@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Scenario", menuName = "ScriptableObjects/Scenario", order = 1)]
+[CreateAssetMenu(fileName = "Scenario", menuName = "ScriptableObjects/Scenario", order = 2)]
 public class ScenarioSO : ScriptableObject
 {
     /// <summary>
@@ -82,12 +82,19 @@ public class ScenarioSO : ScriptableObject
                 return false;
             }
         }
-
         return true;
     }
 
-    public void SelectAction()
+    public bool SelectAction(PlayerDataSO player)
     {
+        foreach (var check in ChecksOnSelection)
+        {
+            if (!check.CheckAbility(player))
+            {
+                return false;
+            }
+        }
 
+        return true;
     }
 }

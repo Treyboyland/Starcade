@@ -7,6 +7,9 @@ using TMPro;
 public class ScenarioSOHandler : MonoBehaviour
 {
     [SerializeField]
+    PlayerDataSO player;
+
+    [SerializeField]
     TypeTextReveal scenarioText = null;
 
     [SerializeField]
@@ -22,6 +25,13 @@ public class ScenarioSOHandler : MonoBehaviour
 
     ScenarioSO currentScenario;
 
+    /// <summary>
+    /// True if currently highlighting selection
+    /// </summary>
+    bool highlighting = false;
+
+    bool passedScenario = true;
+
     private void Start()
     {
         OnNewScenario.AddListener(StartScenario);
@@ -32,16 +42,28 @@ public class ScenarioSOHandler : MonoBehaviour
 
     void ContinueScenario(int selected)
     {
-        Debug.LogWarning("Selected item: " + selected + " on scenario " + currentScenario.ToString());
-        if (currentScenario.ActionsSuccess.Count != 0)
+        if (!highlighting)
         {
-            RemoveButtonListeners();
-            StartScenario(currentScenario.ActionsSuccess[selected]);
+            Debug.LogWarning("Selected item: " + selected + " on scenario " + currentScenario.ToString());
+            if (currentScenario.ActionsSuccess.Count != 0)
+            {
+                RemoveButtonListeners();
+                StartCoroutine(HighlightSelectedThenUpdateScenario(selected));
+            }
+            else
+            {
+                OnScenarioComplete.Invoke();
+            }
         }
-        else
-        {
-            OnScenarioComplete.Invoke();
-        }
+
+    }
+
+    IEnumerator HighlightSelectedThenUpdateScenario(int selected)
+    {
+        highlighting = true;
+        scenarioLayout.HideAllButtonsExcept(selected);
+        yield return new WaitForSeconds(1.5f);
+        StartScenario(passedScenario ? currentScenario.ActionsSuccess[selected] : currentScenario.ActionsFailure[selected]);
     }
 
     void HideAll()
@@ -76,12 +98,13 @@ public class ScenarioSOHandler : MonoBehaviour
     void StartScenario(ScenarioSO scenario)
     {
         currentScenario = scenario;
-        scenarioText.Text = scenario.DescriptiveTextSuccess;
-
+        passedScenario = currentScenario.SelectAction(player);
+        scenarioText.Text = passedScenario ? scenario.DescriptiveTextSuccess : scenario.DescriptiveTextFailure;
+        var actions = passedScenario ? scenario.ActionsSuccess : scenario.ActionsFailure;
 
         for (int i = 0; i < buttonControllers.Count; i++)
         {
-            bool chosen = i == scenario.ActionsSuccess.Count;
+            bool chosen = i == actions.Count;
             if (chosen)
             {
                 Debug.LogWarning("Chosen: " + i);
@@ -96,7 +119,7 @@ public class ScenarioSOHandler : MonoBehaviour
                     var button = buttonControllers[i].Buttons[k];
                     button.Id = k;
                     button.OnActionChosen.AddListener(InvokeScenarioSelectedEvent);
-                    button.Description = scenario.ActionsSuccess.Count != 0 ? scenario.ActionsSuccess[k].ButtonTextActive : "END";
+                    button.Description = actions.Count != 0 ? actions[k].ButtonTextActive : "END";
                 }
                 scenarioLayout.gameObject.SetActive(false);
             }

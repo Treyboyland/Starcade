@@ -8,6 +8,8 @@ public class MonobehaviourEvent : UnityEvent<MonoBehaviour> { }
 
 public class Vector3Event : UnityEvent<Vector3> { }
 
+public class StringEvent : UnityEvent<string> { }
+
 public class IntEvent : UnityEvent<int> { }
 
 public class ScenarioEvent : UnityEvent<Scenario> { }

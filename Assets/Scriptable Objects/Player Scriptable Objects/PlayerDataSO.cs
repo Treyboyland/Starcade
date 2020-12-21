@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Player", menuName = "ScriptableObjects/Player", order = 1)]
 public class PlayerDataSO : ScriptableObject
 {
     public ShipInfo Ship;

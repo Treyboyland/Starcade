@@ -21,9 +21,26 @@ public class ScenarioButtonController : MonoBehaviour
         buttons = GetComponentsInChildren<ActionButton>(true);
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Activates all of the buttons
+    /// </summary>
+    public void ActivateButtons()
     {
+        foreach (var button in buttons)
+        {
+            button.gameObject.SetActive(true);
+        }
+    }
 
+    /// <summary>
+    /// Deactivates all of the buttons, except the one at the given index
+    /// </summary>
+    /// <param name="index"></param>
+    public void HideAllButtonsExcept(int index)
+    {
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].gameObject.SetActive(i == index);
+        }
     }
 }

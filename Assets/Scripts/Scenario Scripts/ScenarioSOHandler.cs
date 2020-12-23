@@ -64,6 +64,7 @@ public class ScenarioSOHandler : MonoBehaviour
         scenarioLayout.HideAllButtonsExcept(selected);
         yield return new WaitForSeconds(1.5f);
         StartScenario(passedScenario ? currentScenario.ActionsSuccess[selected] : currentScenario.ActionsFailure[selected]);
+        highlighting = false;
     }
 
     void HideAll()
@@ -114,6 +115,7 @@ public class ScenarioSOHandler : MonoBehaviour
             if (chosen)
             {
                 scenarioLayout = buttonControllers[i];
+                scenarioLayout.ActivateButtons();
                 for (int k = 0; k < buttonControllers[i].Buttons.Length; k++)
                 {
                     var button = buttonControllers[i].Buttons[k];

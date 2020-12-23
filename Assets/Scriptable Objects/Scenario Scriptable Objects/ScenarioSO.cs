@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Scenario", menuName = "ScriptableObjects/Scenario", order = 2)]
+[CreateAssetMenu(fileName = "Scenario", menuName = "Scenario", order = -1)]
 public class ScenarioSO : ScriptableObject
 {
     /// <summary>

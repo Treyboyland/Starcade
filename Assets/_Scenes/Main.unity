@@ -2158,6 +2158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64b222603153a94c8dddb04cb490af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 11400000, guid: 1b8881ef71bdc3b42b6355d363f1fbad, type: 2}
   scenarioText: {fileID: 1122378916}
   buttonControllers:
   - {fileID: 86246037}

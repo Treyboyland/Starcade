@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Ship: {fileID: 0}
   FactionRelations: []
-  Inventory: []
+  inventory: {fileID: 11400000, guid: 67a419ca5953abb4286a9305fd03020e, type: 2}
   MissionsCompleted: 1
   ShipsDefeated: 2
   AsteroidsDestroyed: 3

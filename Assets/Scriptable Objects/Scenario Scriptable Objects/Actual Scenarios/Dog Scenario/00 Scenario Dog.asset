@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 971e868f8879d3c40840e4e7827773a2, type: 3}
   m_Name: 00 Scenario Dog
   m_EditorClassIdentifier: 
-  Id: 0
-  DescriptiveTextSuccess: 'You see a space dog. Do you pet the dog?
-
-'
-  DescriptiveTextFailure: 
-  ButtonTextActive: 
-  ButtonTextDisabled: 
-  ShowIfUnableToUse: 0
-  Prerequisites: []
-  ChecksOnSelection: []
-  ActionsSuccess:
-  - {fileID: 11400000, guid: 956a4c766344fa647afb3824c303a1f9, type: 2}
+  id: 0
+  showIfUnableToUse: 0
+  prerequisites: []
+  buttonTextActive: 
+  buttonTextDisabled: 
+  descriptiveTextSuccess: You find a space dog. Do you pet the dog?
+  descriptiveTextFailure: 
+  checksOnSelection: []
+  playerEventsSuccess: []
+  playerEventsFailure: []
+  actionsSuccess:
+  - {fileID: 11400000, guid: a4dde6c7920566c43a35d468dee520d9, type: 2}
   - {fileID: 11400000, guid: 3322a50990840964aa7c899c555eaed3, type: 2}
-  ActionsFailure: []
+  actionsFailure: []

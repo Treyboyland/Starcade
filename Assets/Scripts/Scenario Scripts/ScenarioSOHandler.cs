@@ -7,7 +7,7 @@ using TMPro;
 public class ScenarioSOHandler : MonoBehaviour
 {
     [SerializeField]
-    PlayerDataSO player;
+    PlayerDataSO player = null;
 
     [SerializeField]
     TypeTextReveal scenarioText = null;

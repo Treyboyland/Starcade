@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Asteroid Particle
+    uniqueID: 150157303
+    locked: 0
+  - name: Planet Particle
+    uniqueID: 476236169
+    locked: 0

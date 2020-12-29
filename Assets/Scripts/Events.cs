@@ -12,8 +12,6 @@ public class StringEvent : UnityEvent<string> { }
 
 public class IntEvent : UnityEvent<int> { }
 
-public class ScenarioEvent : UnityEvent<Scenario> { }
-
 public class ScenarioSOEvent : UnityEvent<ScenarioSO> { }
 
 public class EmptyEvent : UnityEvent { }

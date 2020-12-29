@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc754dd65f938624f97e9ad749976e76, type: 3}
+  m_Name: 00 Scenario Dog - Pet Random Actions
+  m_EditorClassIdentifier: 
+  id: 0
+  showIfUnableToUse: 0
+  prerequisites: []
+  buttonTextActive: Pet
+  buttonTextDisabled: 
+  ScenariosToSelectFrom:
+  - {fileID: 11400000, guid: 012fbaffd60b76c4bbee441836d05c7d, type: 2}
+  - {fileID: 11400000, guid: 1295bc75ad776a94b8e986a2220b21a0, type: 2}
+  - {fileID: 11400000, guid: 4fb4112a713db7a48b60edb8ebf4eb62, type: 2}
+  - {fileID: 11400000, guid: e2b546f3560129a4c8b4ab65fbf34da6, type: 2}
+  - {fileID: 11400000, guid: 956a4c766344fa647afb3824c303a1f9, type: 2}

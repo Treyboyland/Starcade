@@ -9,12 +9,12 @@ using System;
 public class SaveButtonTest : MonoBehaviour
 {
     [SerializeField]
-    PlayerDataSO playerData;
+    PlayerDataSO playerData = null;
 
     Button button;
 
     [Serializable]
-    public class StringEvent : UnityEvent<string>{ }
+    public class StringEvent : UnityEvent<string> { }
 
     public StringEvent OnGameSaved = new StringEvent();
 

@@ -10,15 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 971e868f8879d3c40840e4e7827773a2, type: 3}
-  m_Name: 00b Scenario Dog - Finish Pet
+  m_Name: 00b Scenario Dog - No Pet
   m_EditorClassIdentifier: 
-  Id: 0
-  DescriptiveTextSuccess: You leave the dog, having satisfied your need to pet
-  DescriptiveTextFailure: 
-  ButtonTextActive: Finish
-  ButtonTextDisabled: 
-  ShowIfUnableToUse: 0
-  Prerequisites: []
-  ChecksOnSelection: []
-  ActionsSuccess: []
-  ActionsFailure: []
+  id: 0
+  showIfUnableToUse: 0
+  prerequisites: []
+  buttonTextActive: Ignore
+  buttonTextDisabled: 
+  descriptiveTextSuccess: You are more of a cat person. You leave the dog.
+  descriptiveTextFailure: 
+  checksOnSelection: []
+  playerEventsSuccess: []
+  playerEventsFailure: []
+  actionsSuccess: []
+  actionsFailure: []

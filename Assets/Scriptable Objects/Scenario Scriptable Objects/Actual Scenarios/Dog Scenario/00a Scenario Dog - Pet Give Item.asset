@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 971e868f8879d3c40840e4e7827773a2, type: 3}
+  m_Name: 00a Scenario Dog - Pet Give Item
+  m_EditorClassIdentifier: 
+  id: 0
+  showIfUnableToUse: 0
+  prerequisites: []
+  buttonTextActive: 
+  buttonTextDisabled: 
+  descriptiveTextSuccess: You pet the dog. The dog runs away from you, and returns
+    with an item.
+  descriptiveTextFailure: You pet the dog. The dog runs around in a circle before
+    returning.
+  checksOnSelection:
+  - {fileID: 11400000, guid: 0ce2334c370de0b4ca75dccf31f4d329, type: 2}
+  playerEventsSuccess:
+  - {fileID: 11400000, guid: b15fddbea7db9aa479db7fea75d59df2, type: 2}
+  playerEventsFailure: []
+  actionsSuccess:
+  - {fileID: 11400000, guid: a4dde6c7920566c43a35d468dee520d9, type: 2}
+  - {fileID: 11400000, guid: a36bb0e7a3935f148a93841e352f6489, type: 2}
+  actionsFailure:
+  - {fileID: 11400000, guid: a4dde6c7920566c43a35d468dee520d9, type: 2}
+  - {fileID: 11400000, guid: a36bb0e7a3935f148a93841e352f6489, type: 2}

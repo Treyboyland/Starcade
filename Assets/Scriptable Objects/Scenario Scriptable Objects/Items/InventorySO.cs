@@ -15,6 +15,23 @@ public class InventorySO : ScriptableObject
     /// <value></value>
     public List<InventorySlotSO> Inventory { get { return inventory; } }
 
+    private void Awake()
+    {
+        //Get rid of null references from editor memory loss
+        RemoveNullReferences();
+    }
+
+    void RemoveNullReferences()
+    {
+        for (int i = inventory.Count - 1; i >= 0; i--)
+        {
+            if (inventory[i] == null)
+            {
+                inventory.RemoveAt(i);
+            }
+        }
+    }
+
     public void AddItem(ItemSO item, uint count = 1)
     {
         Debug.LogWarning("Adding item " + item + " Count: " + count);

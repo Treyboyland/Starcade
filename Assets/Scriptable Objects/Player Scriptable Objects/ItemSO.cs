@@ -31,6 +31,14 @@ public class ItemSO : ScriptableObject
     bool isHidden = false;
 
     /// <summary>
+    /// True if this should be hidden from the player inventory
+    /// </summary>
+    public bool IsHidden
+    {
+        get { return isHidden; }
+    }
+
+    /// <summary>
     /// True if the player can only have one of this item
     /// </summary>
     [Tooltip("True if the player can only have one of this item")]

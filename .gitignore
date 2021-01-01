@@ -64,4 +64,6 @@ crashlytics-build.properties
 # Screenshots that end up getting taken
 /*.png
 
+*.odt#
+
 Saves/

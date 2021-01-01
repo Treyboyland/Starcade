@@ -51,6 +51,9 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     bool triggerFire = false;
 
+    [SerializeField]
+    GameEvent fireEvent = null;
+
     private void Start()
     {
         if (isPlayer)
@@ -109,6 +112,10 @@ public class Weapon : MonoBehaviour
             if (ship != null)
             {
                 ship.DecrementAmmo();
+            }
+            if (fireEvent != null)
+            {
+                fireEvent.RaiseEvent();
             }
             elapsed = 0;
             foreach (var data in offsets)

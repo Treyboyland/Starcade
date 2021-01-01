@@ -179,6 +179,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Planet Particle Red
       objectReference: {fileID: 0}
+    - target: {fileID: 1244987701457506943, guid: d78d42632234b5e48972f38d8d5bf619,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d78d42632234b5e48972f38d8d5bf619, type: 3}
 --- !u!1 &86246034
@@ -753,6 +758,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Planet Particle Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244987701457506943, guid: 2b26aa1b83fdd5445b37bd61b136006f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b26aa1b83fdd5445b37bd61b136006f, type: 3}
@@ -2389,7 +2399,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893035140}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d23095699a21f2649bdd806d45ea62d8, type: 3}
   m_Name: 
@@ -2477,6 +2487,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Planet Particle Yellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244987701457506943, guid: a14bc0ae6d724c245934dba7d85b58ee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a14bc0ae6d724c245934dba7d85b58ee, type: 3}
@@ -2767,6 +2782,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Planet Particle Gray
       objectReference: {fileID: 0}
+    - target: {fileID: 1244987701457506943, guid: fd4305920b65d6c469499c964f56e3a7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd4305920b65d6c469499c964f56e3a7, type: 3}
 --- !u!1001 &7061257922145627955
@@ -2835,6 +2855,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Planet Particle Asteroids
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244987701457506943, guid: c76b28b84092cf34896031332f62340f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c76b28b84092cf34896031332f62340f, type: 3}

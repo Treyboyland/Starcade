@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 971e868f8879d3c40840e4e7827773a2, type: 3}
+  m_Name: 01 Cat Scenario - Ignore 2
+  m_EditorClassIdentifier: 
+  id: 0
+  showIfUnableToUse: 0
+  prerequisites: []
+  buttonTextActive: Ignore
+  buttonTextDisabled: 
+  descriptiveTextSuccess: You ignore the cat. The cat meows at you, louder this time,
+    as it approaches.
+  descriptiveTextFailure: 
+  checksOnSelection: []
+  playerEventsSuccess: []
+  playerEventsFailure: []
+  actionsSuccess:
+  - {fileID: 11400000, guid: 24af2530e3dbc5246951fe4180101824, type: 2}
+  - {fileID: 11400000, guid: 532ed8042e102f84182ba2146a4020d3, type: 2}
+  actionsFailure: []

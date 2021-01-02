@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayOneShotAudio : MonoBehaviour
 {
     [SerializeField]
-    AudioClip clip;
+    AudioClip clip = null;
 
     AudioSource source;
 

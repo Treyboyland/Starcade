@@ -21,6 +21,12 @@ public class Bullet : MonoBehaviour
 
     public static BulletHitParticleController ParticleController = null;
 
+    public static BulletTrailParticleController TrailParticleController = null;
+
+    public EmptyEvent OnBulletDisabled = new EmptyEvent();
+
+    bool trailEventFired = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,11 +36,17 @@ public class Bullet : MonoBehaviour
     private void OnEnable()
     {
         elapsedSeconds = 0;
+        trailEventFired = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!trailEventFired && TrailParticleController != null)
+        {
+            trailEventFired = true;
+            TrailParticleController.OnBulletFired.Invoke(this);
+        }
         if (IsPlayer)
         {
             elapsedSeconds += Time.deltaTime;
@@ -56,7 +68,7 @@ public class Bullet : MonoBehaviour
         {
             thing.DamageShip(damage);
             collisionLocation = (transform.position + other.transform.position) / 2.0f;
-            if(ParticleController != null)
+            if (ParticleController != null)
             {
                 ParticleController.OnSpawnAtLocation.Invoke(collisionLocation);
             }
@@ -64,6 +76,7 @@ public class Bullet : MonoBehaviour
             //Debug.LogWarning("Ship hit!");
             if (!isPiercing)
             {
+                OnBulletDisabled.Invoke();
                 gameObject.SetActive(false);
             }
         }

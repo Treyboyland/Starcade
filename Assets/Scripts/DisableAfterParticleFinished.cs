@@ -10,6 +10,9 @@ public class DisableAfterParticleFinished : MonoBehaviour
     [SerializeField]
     List<ParticleSystem> particleSystems = null;
 
+    [SerializeField]
+    GameEvent explosionEvent = null;
+
     private void OnEnable()
     {
         StartCoroutine(DisableAfterDone());
@@ -26,6 +29,11 @@ public class DisableAfterParticleFinished : MonoBehaviour
 
     IEnumerator DisableAfterDone()
     {
+        if (explosionEvent != null)
+        {
+            explosionEvent.RaiseEvent();
+        }
+
         while (ps.isPlaying)
         {
             yield return null;

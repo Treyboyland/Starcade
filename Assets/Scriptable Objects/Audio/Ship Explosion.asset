@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13a8ba0ac280ab34baddee2a891e3a5a, type: 3}
+  m_Name: Ship Explosion
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 25f8f432820117a4e9acb9e7d44c0f6b, type: 3}
+  - {fileID: 8300000, guid: 2bef3db297a3ab54095bf8bdde48dc87, type: 3}
+  - {fileID: 8300000, guid: 4389c4e90ae283a4baf8a7fdd0489bd0, type: 3}
+  - {fileID: 8300000, guid: 24c50893f9a69004a8fd798cbda262f5, type: 3}
+  - {fileID: 8300000, guid: 143e8a0e3a169bb479ba2d2dbd1105e2, type: 3}
+  - {fileID: 8300000, guid: c72a208cf202c3e448b936826af8b0f5, type: 3}
+  - {fileID: 8300000, guid: e51f709af88beba4a9ed30e9c4e56f65, type: 3}
+  - {fileID: 8300000, guid: cd2eb0c3a6fd5c9428600b73f008207c, type: 3}
+  volumeRange: {x: 0.25, y: 0.5}
+  pitchRange: {x: 0.7, y: 1.5}

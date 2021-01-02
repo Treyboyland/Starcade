@@ -6,7 +6,7 @@ using UnityEngine;
 public class RandomAudioPlayer : MonoBehaviour
 {
     [SerializeField]
-    AudioRandomizerSO audioRandomizerSO;
+    AudioRandomizerSO audioRandomizerSO = null;
     AudioSource source;
     private void Awake()
     {

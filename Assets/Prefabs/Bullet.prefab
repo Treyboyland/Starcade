@@ -122,3 +122,4 @@ MonoBehaviour:
   damage: 0
   secondsToLive: 0
   isPiercing: 0
+  IsPlayer: 0

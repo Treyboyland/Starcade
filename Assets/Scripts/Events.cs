@@ -19,3 +19,5 @@ public class EmptyEvent : UnityEvent { }
 public class BoolEvent : UnityEvent<bool> { }
 
 public class DeathEvent : UnityEvent<Vector3, Color, bool> { }
+
+public class BulletEvent : UnityEvent<Bullet> { }

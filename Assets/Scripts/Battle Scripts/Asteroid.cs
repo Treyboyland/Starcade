@@ -46,7 +46,7 @@ public class Asteroid : ShipInfo
                     UnityEngine.Random.Range(spawnOffset.z, spawnOffset.w), 0);
                 spawned.transform.position = transform.position + offset;
                 spawned.gameObject.SetActive(true);
-                if(damagePerSpawn != 0)
+                if (damagePerSpawn != 0)
                 {
                     ((Asteroid)spawned).DamageShip(damagePerSpawn);
                 }
@@ -59,6 +59,10 @@ public class Asteroid : ShipInfo
     {
         int previousHealth = CurrentHealth;
         CurrentHealth = Mathf.Max(0, CurrentHealth - amount);
+        if (hitEvent != null)
+        {
+            hitEvent.RaiseEvent();
+        }
         if (CurrentHealth == 0)
         {
             int additionalDamage = amount - previousHealth;

@@ -140,6 +140,9 @@ MonoBehaviour:
   MaxShields: 0
   Speed: 0
   IsPlayer: 0
+  IsShip: 1
+  Faction: 0
+  hitEvent: {fileID: 11400000, guid: 99e65735da4417a4da6e0ed7f9eeff4d, type: 2}
   rb: {fileID: 859141608095691672}
   velocityRange: {x: -0.5, y: 0.5, z: -0.5, w: -2}
   spawnCount: 2

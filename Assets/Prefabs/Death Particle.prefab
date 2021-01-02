@@ -48,6 +48,7 @@ MonoBehaviour:
   ps: {fileID: 8281538020480261347}
   particleSystems:
   - {fileID: 8281538020480261347}
+  explosionEvent: {fileID: 11400000, guid: d24cf772e0ad9bf42bec06f0d66e6645, type: 2}
 --- !u!199 &8281538020480261348
 ParticleSystemRenderer:
   serializedVersion: 6

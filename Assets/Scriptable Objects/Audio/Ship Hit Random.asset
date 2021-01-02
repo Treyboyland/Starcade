@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13a8ba0ac280ab34baddee2a891e3a5a, type: 3}
+  m_Name: Ship Hit Random
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 2d941e468a5e579418cd6f870ae07307, type: 3}
+  - {fileID: 8300000, guid: a7e38a4636bf6014981b578b82835f44, type: 3}
+  - {fileID: 8300000, guid: 3291ba39c3c3c9f45b4cf5295364c5b3, type: 3}
+  - {fileID: 8300000, guid: 5312554fef32f164db7b84856b0eea08, type: 3}
+  - {fileID: 8300000, guid: 22ef986c62875d949a32b04e71c0fd18, type: 3}
+  - {fileID: 8300000, guid: 451210d74befdf64896cae08723dfb13, type: 3}
+  - {fileID: 8300000, guid: 24ab48715698351448ee510d03e1bf63, type: 3}
+  - {fileID: 8300000, guid: b34d9aeda82b7e94a808fcd24714556e, type: 3}
+  volumeRange: {x: 0.25, y: 0.5}
+  pitchRange: {x: 0.5, y: 1.25}

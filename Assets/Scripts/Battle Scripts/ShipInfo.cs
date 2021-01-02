@@ -18,6 +18,9 @@ public class ShipInfo : MonoBehaviour
 
     public FactionType Faction;
 
+    [SerializeField]
+    protected GameEvent hitEvent = null;
+
     public IntEvent OnAmmoChanged = new IntEvent();
 
     public IntEvent OnHealthChanged = new IntEvent();
@@ -35,6 +38,10 @@ public class ShipInfo : MonoBehaviour
         //TODO: Implement shields 2:1 damage?
 
         CurrentHealth = Mathf.Max(0, CurrentHealth - amount);
+        if (hitEvent != null)
+        {
+            hitEvent.RaiseEvent();
+        }
         OnHealthChanged.Invoke(CurrentHealth);
         if (CurrentHealth == 0)
         {

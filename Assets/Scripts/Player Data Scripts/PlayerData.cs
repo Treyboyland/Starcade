@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(ShipInfo))]
+[RequireComponent(typeof(Ship))]
 public class PlayerData : MonoBehaviour
 {
-    public ShipInfo Ship;
+    public Ship Ship;
 
     public int MissionsCompleted = 0;
     public int ShipsDefeated = 0;

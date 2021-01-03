@@ -15,7 +15,7 @@ public class RandomAudioPlayer : MonoBehaviour
 
     public void PlayRandomAudio()
     {
-        Debug.LogWarning("Playing Audio");
+        //Debug.LogWarning("Playing Audio");
         if (source != null)
         {
             audioRandomizerSO.PlayRandomSound(source);

@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Player", menuName = "Player", order = -99)]
 public class PlayerDataSO : ScriptableObject
 {
-    public ShipInfo Ship;
+    public ShipDataSO Ship;
 
     public List<FactionAffinitySO> FactionRelations;
 

@@ -8,7 +8,7 @@ public class ShieldBarUi : MonoBehaviour
     [SerializeField]
     Image barImage = null;
 
-    ShipInfo playerShip;
+    Ship playerShip;
 
     int maxValue;
     int initialValue;
@@ -17,7 +17,7 @@ public class ShieldBarUi : MonoBehaviour
     void Start()
     {
         playerShip = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShip>();
-        maxValue = playerShip.MaxShields;
+        maxValue = playerShip.ShipData.MaxShields;
         initialValue = playerShip.CurrentShields;
         playerShip.OnShieldsChanged.AddListener(SetNewValue);
 

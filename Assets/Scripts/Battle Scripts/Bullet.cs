@@ -5,13 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField]
-    int damage = 0;
-
-    [SerializeField]
-    float secondsToLive = 0;
-
-    [SerializeField]
-    bool isPiercing = false;
+    BulletDataSO bulletData = null;
 
     float elapsedSeconds = 0;
 
@@ -55,7 +49,7 @@ public class Bullet : MonoBehaviour
         {
             elapsedSeconds += Time.deltaTime;
         }
-        if (elapsedSeconds >= secondsToLive)
+        if (elapsedSeconds >= bulletData.SecondsToLive)
         {
             gameObject.SetActive(false);
         }
@@ -63,10 +57,10 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        var thing = other.GetComponent<ShipInfo>();
+        var thing = other.GetComponent<Ship>();
         if (thing != null && thing.IsPlayer != IsPlayer)
         {
-            thing.DamageShip(damage);
+            thing.DamageShip(bulletData.Damage);
             collisionLocation = (transform.position + other.transform.position) / 2.0f;
             if (ParticleController != null)
             {
@@ -74,7 +68,7 @@ public class Bullet : MonoBehaviour
             }
             //OnHitAtLocation.Invoke(collisionLocation);
             //Debug.LogWarning("Ship hit!");
-            if (!isPiercing)
+            if (!bulletData.IsPiercing)
             {
                 OnBulletDisabled.Invoke();
                 gameObject.SetActive(false);

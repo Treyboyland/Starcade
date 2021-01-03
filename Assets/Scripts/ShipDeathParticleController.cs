@@ -5,7 +5,10 @@ using UnityEngine;
 public class ShipDeathParticleController : MonoBehaviour
 {
     [SerializeField]
-    DisableAfterParticleFinished prefab = null;
+    DisableAfterParticleFinished shipDeathParticle = null;
+
+    [SerializeField]
+    DisableAfterParticleFinished playerDeathParticle = null;
 
     GamePool pool;
 
@@ -16,16 +19,15 @@ public class ShipDeathParticleController : MonoBehaviour
     {
         pool = GamePool.Instance;
         OnSpawnAtLocation.AddListener(SpawnParticle);
-        ShipInfo.ParticleController = this;
+        Ship.ParticleController = this;
     }
 
-    void SpawnParticle(Vector3 pos, Color color, bool isShip)
+    void SpawnParticle(Vector3 pos, Color color, bool isPlayer)
     {
         //Debug.Log("Before: " + color);
-        color = isShip ? color : Color.white;
         //Debug.Log("After: " + color);
         //Debug.LogWarning("Spawning particle at location " + pos);
-        var obj = (DisableAfterParticleFinished)pool.GetObject(prefab);
+        var obj = (DisableAfterParticleFinished)pool.GetObject(isPlayer ? playerDeathParticle : shipDeathParticle);
 
         obj.transform.position = pos;
         obj.SetColor(color);

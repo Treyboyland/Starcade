@@ -132,13 +132,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd77193ada00bd42a64dce4501f0d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shipData: {fileID: 11400000, guid: 03f77313df16f3340a80afe9467276a4, type: 2}
+  inDebug: 0
   CurrentAmmo: 0
   CurrentHealth: 30
   CurrentShields: 0
-  MaxAmmo: 0
-  MaxHealth: 30
-  MaxShields: 0
-  Speed: 0
+  CurrentSpeed: 0
   IsPlayer: 0
   IsShip: 1
   Faction: 0

@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a474d2bd79b7caf47a7693236bf0edca, type: 3}
   m_Name: Normal Player Weapon
   m_EditorClassIdentifier: 
-  offsets: []
-  fireRate: 0
+  offsets:
+  - Offset: {x: 0, y: 0.5, z: 0}
+    Rotation: 0
+  fireRate: 0.25

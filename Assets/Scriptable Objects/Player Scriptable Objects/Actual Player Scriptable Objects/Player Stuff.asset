@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df02d00d2291e04ea3a3ec2e34192ce, type: 3}
   m_Name: Player Stuff
   m_EditorClassIdentifier: 
-  Ship: {fileID: 0}
+  Ship: {fileID: 11400000, guid: 747463245f07b034880026b8937eb194, type: 2}
   FactionRelations: []
   inventory: {fileID: 11400000, guid: 67a419ca5953abb4286a9305fd03020e, type: 2}
   MissionsCompleted: 1

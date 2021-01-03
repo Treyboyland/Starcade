@@ -118,6 +118,12 @@ PrefabInstance:
       propertyPath: damage
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7879033647725275102, guid: 011a9e8a15706fc48aaf9e8ae14977a9,
+        type: 3}
+      propertyPath: bulletData
+      value: 
+      objectReference: {fileID: 11400000, guid: 0979c17094b67e54ba1ad2436d00006b,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 011a9e8a15706fc48aaf9e8ae14977a9, type: 3}
 --- !u!1 &1328073586306168449 stripped

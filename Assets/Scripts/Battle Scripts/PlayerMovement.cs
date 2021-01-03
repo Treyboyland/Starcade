@@ -8,19 +8,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     Rigidbody2D body = null;
 
-    ShipInfo shipInfo = null;
+    [SerializeField]
+    Ship playerShip = null;
 
     [SerializeField]
     Vector2 minPosition = new Vector2();
 
     [SerializeField]
     Vector2 maxPosition = new Vector2();
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        shipInfo = PlayerDataSingleton.Instance.Data.Ship;
-    }
 
     private void FixedUpdate()
     {
@@ -29,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
         movement.y = Input.GetAxis("Vertical");
 
         Vector2 newPos = transform.position;
-        newPos += movement * shipInfo.Speed * Time.fixedDeltaTime;
+        newPos += movement * playerShip.CurrentSpeed * Time.fixedDeltaTime;
 
         newPos = Vector2.Min(newPos, maxPosition);
         newPos = Vector2.Max(newPos, minPosition);

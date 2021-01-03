@@ -2,13 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShip : ShipInfo
+public class PlayerShip : Ship
 {
-    private void Start()
-    {
-        if(PlayerDataSingleton.Instance != null)
-        {
-            this.SetData(PlayerDataSingleton.Instance.Data.Ship);
-        }
-    }
+
 }

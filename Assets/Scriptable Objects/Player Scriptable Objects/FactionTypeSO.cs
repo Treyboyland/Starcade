@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Faction", menuName = "Factions/Faction")]
 public class FactionTypeSO : ScriptableObject
 {
+    /// <summary>
+    /// Name of this faction
+    /// </summary>
+    [Tooltip("Name of this faction")]
     public string Name;
 
+    /// <summary>
+    /// Description for this faction
+    /// </summary>
+    [Tooltip("Description for this faction")]
+    [TextArea]
     public string Description;
 }
 
-
-public class FactionAffinitySO : ScriptableObject
-{
-    FactionTypeSO Faction;
-
-    public int PositiveReputation;
-    public int NegativeReputation;
-    public int EgregiousActions;
-    public int ParagonActions;
-}

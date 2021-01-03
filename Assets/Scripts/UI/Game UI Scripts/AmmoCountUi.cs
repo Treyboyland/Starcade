@@ -8,8 +8,6 @@ public class AmmoCountUi : MonoBehaviour
 {
     TextMeshProUGUI textbox;
 
-    PlayerDataSingleton dataSingleton;
-
     // Start is called before the first frame update
     void Start()
     {

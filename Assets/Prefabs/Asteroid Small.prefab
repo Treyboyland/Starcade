@@ -52,6 +52,12 @@ PrefabInstance:
       propertyPath: MaxHealth
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 859141608095691673, guid: 86b060488e527e843b88c53e31b53089,
+        type: 3}
+      propertyPath: shipData
+      value: 
+      objectReference: {fileID: 11400000, guid: c8c6eb674f100e34391bdfbbe7b982ef,
+        type: 2}
     - target: {fileID: 859141608095691675, guid: 86b060488e527e843b88c53e31b53089,
         type: 3}
       propertyPath: m_LocalPosition.x

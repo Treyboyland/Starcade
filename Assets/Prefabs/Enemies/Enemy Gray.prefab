@@ -41,15 +41,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4248405ad7f55e4f8f4f9ee586661fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 0c004c691943557438ff014fe3b357d7, type: 2}
   bulletPrefab: {fileID: 6703130552028267826, guid: 775a8bb94422ad14fb5881d85186bf88,
     type: 3}
-  offsets:
-  - Offset: {x: 0, y: 0.5, z: 0}
-    Rotation: 0
   isPlayer: 0
-  fireRate: 1
   isPlayerControlled: 0
   triggerFire: 1
+  fireEvent: {fileID: 0}
 --- !u!1001 &1803962223670698938
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -112,6 +110,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 2717244034995579412, guid: 11c7bd10448e26b47bdcb009a5f39452,
+        type: 3}
+      propertyPath: shipData
+      value: 
+      objectReference: {fileID: 11400000, guid: a3c240a5ba8f54c43b3b4b9edd93ca78,
+        type: 2}
+    - target: {fileID: 2717244034995579412, guid: 11c7bd10448e26b47bdcb009a5f39452,
+        type: 3}
+      propertyPath: hitEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 99e65735da4417a4da6e0ed7f9eeff4d,
+        type: 2}
     - target: {fileID: 7239241639134072040, guid: 11c7bd10448e26b47bdcb009a5f39452,
         type: 3}
       propertyPath: m_Name

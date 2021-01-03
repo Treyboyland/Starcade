@@ -67,7 +67,7 @@ public class BulletTrail : MonoBehaviour
             coroutineStarted = true;
             StartCoroutine(WaitThenDisable());
         }
-        Debug.LogWarning("Is playing: " + particle.isPlaying);
+        //Debug.LogWarning("Is playing: " + particle.isPlaying);
     }
     private void OnDisable()
     {
@@ -81,7 +81,6 @@ public class BulletTrail : MonoBehaviour
         {
             yield return null;
         }
-        yield return new WaitForSeconds(5.0f);
 
         gameObject.SetActive(false);
     }

@@ -5,9 +5,12 @@ using UnityEngine.Events;
 
 public class Weapon : MonoBehaviour
 {
-    ShipInfo ship = null;
+    [SerializeField]
+    WeaponDataSO weaponData = null;
 
-    public ShipInfo Ship
+    Ship ship = null;
+
+    public Ship Ship
     {
         get
         {
@@ -23,9 +26,6 @@ public class Weapon : MonoBehaviour
     protected Bullet bulletPrefab = null;
 
     [SerializeField]
-    List<OffsetAndRotation> offsets = new List<OffsetAndRotation>();
-
-    [SerializeField]
     protected bool isPlayer = false;
 
     public bool IsPlayer
@@ -39,9 +39,6 @@ public class Weapon : MonoBehaviour
             isPlayer = value;
         }
     }
-
-    [SerializeField]
-    protected float fireRate = 0;
 
     protected float elapsed = 0;
 
@@ -96,12 +93,12 @@ public class Weapon : MonoBehaviour
             }
             else
             {
-                return elapsed >= fireRate;
+                return elapsed >= weaponData.FireRate;
             }
         }
         else
         {
-            return triggerFire || elapsed >= fireRate;
+            return triggerFire || elapsed >= weaponData.FireRate;
         }
     }
 
@@ -118,7 +115,7 @@ public class Weapon : MonoBehaviour
                 fireEvent.RaiseEvent();
             }
             elapsed = 0;
-            foreach (var data in offsets)
+            foreach (var data in weaponData.Offsets)
             {
                 Bullet bullet = (Bullet)GamePool.Instance.GetObject(bulletPrefab);
                 bullet.IsPlayer = isPlayer;

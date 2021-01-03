@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Asteroid : ShipInfo
+public class Asteroid : Ship
 {
     [SerializeField]
     Rigidbody2D rb = null;
@@ -27,7 +27,7 @@ public class Asteroid : ShipInfo
 
     private void OnEnable()
     {
-        CurrentHealth = MaxHealth;
+        CurrentHealth = shipData.MaxHealth;
         pool = GamePool.Instance;
         rb.velocity = new Vector2(UnityEngine.Random.Range(velocityRange.x, velocityRange.y),
             UnityEngine.Random.Range(velocityRange.z, velocityRange.w));

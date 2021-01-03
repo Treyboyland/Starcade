@@ -123,6 +123,12 @@ PrefabInstance:
       propertyPath: damage
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7879033647725275102, guid: 011a9e8a15706fc48aaf9e8ae14977a9,
+        type: 3}
+      propertyPath: bulletData
+      value: 
+      objectReference: {fileID: 11400000, guid: 384a5739d085ecf47aea9f4eeb9f73e5,
+        type: 2}
     - target: {fileID: 8906425213101496989, guid: 011a9e8a15706fc48aaf9e8ae14977a9,
         type: 3}
       propertyPath: m_Sprite

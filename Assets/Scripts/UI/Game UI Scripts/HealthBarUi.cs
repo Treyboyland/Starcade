@@ -8,7 +8,7 @@ public class HealthBarUi : MonoBehaviour
     [SerializeField]
     Image barImage = null;
 
-    ShipInfo playerShip;
+    Ship playerShip;
 
     int maxValue;
     int initialValue;
@@ -17,7 +17,7 @@ public class HealthBarUi : MonoBehaviour
     void Start()
     {
         playerShip = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShip>();
-        maxValue = playerShip.MaxHealth;
+        maxValue = playerShip.ShipData.MaxHealth;
         initialValue = playerShip.CurrentHealth;
         playerShip.OnHealthChanged.AddListener(SetNewValue);
 

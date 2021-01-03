@@ -20,8 +20,21 @@ public class WeaponDataSO : ScriptableObject
     /// <value></value>
     public List<OffsetAndRotation> Offsets { get { return offsets; } }
 
-
-    [Tooltip("")]
+    /// <summary>
+    /// How much time must elapse before the weapon can be fired
+    /// </summary>
+    [Tooltip("How much time must elapse before the weapon can be fired")]
     [SerializeField]
-    float fireRate;
+    float fireRate = 0;
+
+    /// <summary>
+    /// How much time must elapse before the weapon can be fired
+    /// </summary>
+    public float FireRate
+    {
+        get
+        {
+            return fireRate;
+        }
+    }
 }

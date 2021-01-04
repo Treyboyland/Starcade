@@ -28,8 +28,6 @@ public class Ship : MonoBehaviour
 
     public bool IsShip = true;
 
-    public FactionType Faction;
-
     [SerializeField]
     protected GameEvent hitEvent = null;
 

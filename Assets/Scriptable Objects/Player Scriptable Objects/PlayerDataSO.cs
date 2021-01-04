@@ -1,10 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [CreateAssetMenu(fileName = "Player", menuName = "Player", order = -99)]
 public class PlayerDataSO : ScriptableObject
 {
+    /// <summary>
+    /// Name of the player
+    /// </summary>
+    public string Name;
+
+    /// <summary>
+    /// Time that this player was last saved
+    /// </summary>
+    [SerializeField]
+    long dateTimeInt = 0;
+
+    /// <summary>
+    /// Time that this player was last saved
+    /// </summary>
+    public DateTime LastSaveTime
+    {
+        get
+        {
+            return new DateTime(dateTimeInt);
+        }
+        set
+        {
+            dateTimeInt = value.Ticks;
+        }
+    }
+
     public ShipDataSO Ship;
 
     public List<FactionAffinitySO> FactionRelations;

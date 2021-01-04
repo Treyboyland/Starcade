@@ -26,7 +26,7 @@ public class SaveButtonTest : MonoBehaviour
 
     void SaveGame()
     {
-        SaveUtility.SaveGame(playerData);
+        SaveUtility.SaveGameNew(playerData);
         OnGameSaved.Invoke(SaveUtility.Error);
     }
 }

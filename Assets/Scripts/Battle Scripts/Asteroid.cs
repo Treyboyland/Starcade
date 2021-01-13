@@ -25,12 +25,25 @@ public class Asteroid : Ship
     Vector2 velocity;
     GamePool pool;
 
+    const float SECONDS_TO_WAIT_BEFORE_ATTACK = 0.75f;
+
+    bool canAttack = false;
+
+
     private void OnEnable()
     {
+        canAttack = false;
         CurrentHealth = shipData.MaxHealth;
         pool = GamePool.Instance;
         rb.velocity = new Vector2(UnityEngine.Random.Range(velocityRange.x, velocityRange.y),
             UnityEngine.Random.Range(velocityRange.z, velocityRange.w));
+        StartCoroutine(AttackDelay()); //I think this should be fine...runs once per asteroid per spawn
+    }
+
+    IEnumerator AttackDelay()
+    {
+        yield return new WaitForSeconds(SECONDS_TO_WAIT_BEFORE_ATTACK);
+        canAttack = true;
     }
 
     void SpawnMoreAsteroids(int additionalDamage)
@@ -69,6 +82,23 @@ public class Asteroid : Ship
             SpawnParticle();
             SpawnMoreAsteroids(additionalDamage);
             gameObject.SetActive(false);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        //TODO: Only damage player, or all normal faction ships as well?
+        if (!canAttack)
+        {
+            return;
+        }
+
+        var player = other.collider.gameObject.GetComponent<PlayerShip>();
+        if (player != null)
+        {
+            //Hit player for damage and then die
+            player.DamageShip(CurrentHealth);
+            DamageShip(CurrentHealth);
         }
     }
 }

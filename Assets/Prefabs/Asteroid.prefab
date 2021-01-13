@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 859141608095691673}
   - component: {fileID: 859141608095691674}
   - component: {fileID: 859141608095691672}
-  m_Layer: 0
+  - component: {fileID: 3088048508778703483}
+  m_Layer: 10
   m_Name: Asteroid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +141,6 @@ MonoBehaviour:
   CurrentSpeed: 0
   IsPlayer: 0
   IsShip: 1
-  Faction: 0
   hitEvent: {fileID: 11400000, guid: 99e65735da4417a4da6e0ed7f9eeff4d, type: 2}
   rb: {fileID: 859141608095691672}
   velocityRange: {x: -0.5, y: 0.5, z: -0.5, w: -2}
@@ -186,3 +186,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3088048508778703483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859141608095691678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b8c977560265f478c8f8b94c4b290a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomizerData: {fileID: 11400000, guid: c0896c3f9208b964bbe9fdc2f03d7432, type: 2}

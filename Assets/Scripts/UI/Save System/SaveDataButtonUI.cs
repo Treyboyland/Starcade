@@ -8,6 +8,9 @@ using TMPro;
 public class SaveDataButtonUI : MonoBehaviour
 {
     [SerializeField]
+    SaveManager saveManager = null;
+
+    [SerializeField]
     TextMeshProUGUI nameBox = null;
 
     [SerializeField]
@@ -22,10 +25,12 @@ public class SaveDataButtonUI : MonoBehaviour
 
     public int Index { get; set; }
 
+    public bool Interactable { get { return selectionButton.interactable; } set { selectionButton.interactable = value; } }
+
     // Start is called before the first frame update
     void Start()
     {
-
+        selectionButton.onClick.AddListener(() => saveManager.LoadData(Index));
     }
 
     void SetBlankData()

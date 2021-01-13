@@ -4,14 +4,29 @@ using UnityEngine;
 
 public class SaveManager : MonoBehaviour
 {
+    [Tooltip("Player that will be used throughout the game. For release, should be \"_Game Player\"")]
+    [SerializeField]
+    PlayerDataSO gamePlayer = null;
+
     List<PlayerDataSO> playerSaves = new List<PlayerDataSO>();
 
     [SerializeField]
     List<SaveDataButtonUI> saveDataButtons = null;
 
+    [SerializeField]
+    SceneLoader sceneLoader = null;
+
     int maxPages = 1;
 
     int currentPage = 0;
+
+    private void Start()
+    {
+        for (int i = 0; i < saveDataButtons.Count; i++)
+        {
+            saveDataButtons[i].Index = i;
+        }
+    }
 
     public void NextPage()
     {
@@ -69,6 +84,37 @@ public class SaveManager : MonoBehaviour
         else
         {
             Debug.LogError(SaveUtility.Error);
+        }
+    }
+
+    public void EnableButtons()
+    {
+        foreach (var button in saveDataButtons)
+        {
+            button.Interactable = true;
+        }
+    }
+
+    public void DisableButtons()
+    {
+        foreach (var button in saveDataButtons)
+        {
+            button.Interactable = false;
+        }
+    }
+
+    public void LoadData(int index)
+    {
+        int saveIndex = currentPage * playerSaves.Count + index;
+        try
+        {
+            gamePlayer.CopyData(playerSaves[saveIndex]);
+            sceneLoader.LoadSceneAsyncSingle();
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("Save could not be loaded: " + e);
+            return;
         }
     }
 }

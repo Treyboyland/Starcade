@@ -10,6 +10,9 @@ public class ScenarioSOHandler : MonoBehaviour
     PlayerDataSO player = null;
 
     [SerializeField]
+    GameEvent externalScenarioCompleteEvent = null;
+
+    [SerializeField]
     TypeTextReveal scenarioText = null;
 
     [SerializeField]
@@ -36,7 +39,7 @@ public class ScenarioSOHandler : MonoBehaviour
     {
         OnNewScenario.AddListener(StartScenario);
         OnScenarioSelected.AddListener(ContinueScenario);
-        OnScenarioComplete.AddListener(HideAll);
+        OnScenarioComplete.AddListener(CompleteScenario);
         HideAll();
     }
 
@@ -74,6 +77,12 @@ public class ScenarioSOHandler : MonoBehaviour
             controller.gameObject.SetActive(false);
         }
         scenarioText.Hide();
+    }
+
+    void CompleteScenario()
+    {
+        HideAll();
+        externalScenarioCompleteEvent.RaiseEvent();
     }
 
     void RevealButtons()

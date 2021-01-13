@@ -79,7 +79,7 @@ public class Ship : MonoBehaviour
                 spriteRenderer = GetComponent<SpriteRenderer>();
             }
             var color = spriteRenderer != null ? spriteRenderer.color : Color.white;
-            ParticleController.OnSpawnAtLocation.Invoke(transform.position, color, IsShip);
+            ParticleController.OnSpawnAtLocation.Invoke(transform.position, color, IsPlayer);
         }
     }
 

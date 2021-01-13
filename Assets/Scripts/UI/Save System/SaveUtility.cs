@@ -83,7 +83,7 @@ public static class SaveUtility
                 fileCount++;
                 string fileData = File.ReadAllText(file);
                 Debug.LogWarning("File Data: " + fileData);
-                PlayerDataSO data = new PlayerDataSO();
+                PlayerDataSO data = (PlayerDataSO)ScriptableObject.CreateInstance(typeof(PlayerDataSO));
                 JsonUtility.FromJsonOverwrite(fileData, data);
                 saveData.Add(data);
             }

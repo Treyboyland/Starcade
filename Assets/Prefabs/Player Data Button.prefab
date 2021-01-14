@@ -250,7 +250,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 11.3
+  m_fontSize: 11.6
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -326,6 +326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08a4b4d6cfa695747b5f2f64e6497c93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveManager: {fileID: 0}
   nameBox: {fileID: 447672917444442966}
   dateBox: {fileID: 1967794574}
   otherDataBox: {fileID: 1383710283}
@@ -410,12 +411,12 @@ PrefabInstance:
     - target: {fileID: 7405512765631571719, guid: c092c9e4170aec648a9d9766b65131ca,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 685
       objectReference: {fileID: 0}
     - target: {fileID: 7405512765631571719, guid: c092c9e4170aec648a9d9766b65131ca,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 7405512765631571719, guid: c092c9e4170aec648a9d9766b65131ca,
         type: 3}
@@ -524,6 +525,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21920211631971348, guid: 9fd938f5a4b83e84182929ead1995334,
         type: 2}
+    - target: {fileID: 7405512766031053886, guid: c092c9e4170aec648a9d9766b65131ca,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405512766031053886, guid: c092c9e4170aec648a9d9766b65131ca,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c092c9e4170aec648a9d9766b65131ca, type: 3}
 --- !u!1 &447672918087260270 stripped

@@ -22,3 +22,4 @@ MonoBehaviour:
   AsteroidsDestroyed: 0
   ScrapCollected: 0
   TotalScrapCollected: 0
+  TotalCycles: 0

@@ -63,10 +63,21 @@ public class MasterPool<T> : MonoBehaviour where T : MonoBehaviour
 
     public List<T> GetInitialized(T obj)
     {
-        if(pools.ContainsKey(obj))
+        if (pools.ContainsKey(obj))
         {
             return pools[obj];
         }
         return new List<T>();
+    }
+
+    public void DisableAll()
+    {
+        foreach (var prefabList in pools)
+        {
+            foreach (var prefab in prefabList.Value)
+            {
+                prefab.gameObject.SetActive(false);
+            }
+        }
     }
 }

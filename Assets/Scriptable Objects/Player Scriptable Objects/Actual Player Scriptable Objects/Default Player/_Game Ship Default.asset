@@ -9,8 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: Dog Medal Slot
-  m_EditorClassIdentifier: Assembly-CSharp::InventorySlotSO
-  item: {fileID: 11400000, guid: d5b52299882c9bb44979aba712b90447, type: 2}
-  count: 1
+  m_Script: {fileID: 11500000, guid: 595143a96f78f49428ed1a15390bf54f, type: 3}
+  m_Name: _Game Ship Default
+  m_EditorClassIdentifier: 
+  faction: {fileID: 0}
+  maxHealth: 100
+  maxShields: 100
+  maxAmmo: 50
+  hasUnlimitedAmmo: 0
+  speed: 5

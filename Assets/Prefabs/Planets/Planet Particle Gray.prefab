@@ -15,6 +15,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6771427927025388883, guid: ebc657209b9acad45ad77684d71aee91,
+        type: 3}
+      propertyPath: faction
+      value: 
+      objectReference: {fileID: 11400000, guid: 0c913a8c6889eb342a9b0c94a74f40ee,
+        type: 2}
     - target: {fileID: 8587626848402110950, guid: ebc657209b9acad45ad77684d71aee91,
         type: 3}
       propertyPath: m_LocalPosition.x

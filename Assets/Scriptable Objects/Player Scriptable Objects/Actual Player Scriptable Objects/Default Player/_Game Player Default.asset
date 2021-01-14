@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0df02d00d2291e04ea3a3ec2e34192ce, type: 3}
+  m_Name: _Game Player Default
+  m_EditorClassIdentifier: 
+  Name: Default
+  dateTimeInt: 12345678
+  Ship: {fileID: 11400000, guid: 4cb8629bc5c185e46a14a6f19d3f766a, type: 2}
+  FactionRelations:
+  - {fileID: 11400000, guid: 4273111db5901af4cbdaff511cae5e56, type: 2}
+  - {fileID: 11400000, guid: 88e10a90b8c274c4f84096aa19e95499, type: 2}
+  - {fileID: 11400000, guid: 37a65b6dfa57e954d8a1c6e1849ca174, type: 2}
+  - {fileID: 11400000, guid: b600397d942eda043aa604efe6e572a6, type: 2}
+  - {fileID: 11400000, guid: 4e79996c3c35e3d45b736d25b36299f2, type: 2}
+  inventory: {fileID: 11400000, guid: 5f37423cc879c90428cbe950969dee41, type: 2}
+  MissionsCompleted: 0
+  ShipsDefeated: 0
+  AsteroidsDestroyed: 0
+  ScrapCollected: 0
+  TotalScrapCollected: 0
+  TotalCycles: 0

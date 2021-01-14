@@ -64,6 +64,11 @@ public class Weapon : MonoBehaviour
         }
     }
 
+    public void EquipWeapon(WeaponDataSO newWeapon)
+    {
+        weaponData = newWeapon;
+    }
+
     // Update is called once per frame
     protected virtual void Update()
     {

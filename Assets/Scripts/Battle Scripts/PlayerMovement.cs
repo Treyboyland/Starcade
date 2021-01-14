@@ -17,8 +17,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     Vector2 maxPosition = new Vector2();
 
+    [SerializeField]
+    bool canMove = true;
+
+    public bool CanMove { get { return canMove; } set { canMove = value; } }
+
     private void FixedUpdate()
     {
+        if (!canMove)
+        {
+            return;
+        }
         Vector2 movement;
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");

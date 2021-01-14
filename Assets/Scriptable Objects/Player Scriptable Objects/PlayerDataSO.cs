@@ -76,4 +76,9 @@ public class PlayerDataSO : ScriptableObject
         // }
 
     }
+
+    public void IncrementCycle()
+    {
+        TotalCycles++;
+    }
 }

@@ -17,6 +17,8 @@ public class Spawner : MonoBehaviour
 
     float newTime = 0;
 
+    public bool CanSpawn { get; set; } = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,7 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GameConstants.CanEnemiesPassTime)
+        if (!GameConstants.CanEnemiesPassTime || !CanSpawn)
         {
             return;
         }

@@ -51,6 +51,6 @@ public class SaveDataButtonUI : MonoBehaviour
         selectionButton.interactable = true;
         nameBox.text = data.Name;
         dateBox.text = data.LastSaveTime.ToString("yyyy-MM-dd HH-mm-ss");
-        otherDataBox.text = "Insert Other Data Here";
+        otherDataBox.text = "Cycles: " + data.TotalCycles;
     }
 }

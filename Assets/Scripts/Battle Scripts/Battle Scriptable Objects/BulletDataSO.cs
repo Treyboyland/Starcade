@@ -62,4 +62,18 @@ public class BulletDataSO : ScriptableObject
             return isPiercing;
         }
     }
+
+
+    /// <summary>
+    /// True if the bullet should have a trail
+    /// </summary>
+    [Tooltip("True if the bullet should have a trail")]
+    [SerializeField]
+    bool hasTrail = false;
+
+    /// <summary>
+    /// True if the bullet should have a trail
+    /// </summary>
+    /// <value></value>
+    public bool HasTrail { get { return hasTrail; } }
 }

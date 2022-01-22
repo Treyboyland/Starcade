@@ -757,6 +757,7 @@ GameObject:
   - component: {fileID: 480796307}
   - component: {fileID: 480796308}
   - component: {fileID: 480796305}
+  - component: {fileID: 480796310}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -927,9 +928,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5635411857662211597, guid: 9c81fcd08f8c0d24fae329049e56374a,
     type: 3}
   isPlayer: 1
-  isPlayerControlled: 1
   triggerFire: 0
   fireEvent: {fileID: 11400000, guid: 5685121d5e363ae4cb874b3cadafe175, type: 2}
+  fireInputString: Fire
 --- !u!114 &480796309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -951,6 +952,25 @@ MonoBehaviour:
   IsPlayer: 1
   IsShip: 1
   hitEvent: {fileID: 11400000, guid: 2e9b6753b9983744f8bdaf0817e163e1, type: 2}
+--- !u!114 &480796310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480796301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4248405ad7f55e4f8f4f9ee586661fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 44c668436db50ab4387fb61952e9ecad, type: 2}
+  bulletPrefab: {fileID: 5635411857662211597, guid: 16ce0ad1bb5cacb4ab1cc5b024a8fb1c,
+    type: 3}
+  isPlayer: 1
+  triggerFire: 1
+  fireEvent: {fileID: 0}
+  fireInputString: AltFire
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

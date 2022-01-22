@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 367534570}
   - component: {fileID: 367534572}
   - component: {fileID: 367534571}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Planet Particle Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}

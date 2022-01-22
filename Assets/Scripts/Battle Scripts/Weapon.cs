@@ -43,13 +43,13 @@ public class Weapon : MonoBehaviour
     protected float elapsed = 0;
 
     [SerializeField]
-    bool isPlayerControlled = false;
-
-    [SerializeField]
     bool triggerFire = false;
 
     [SerializeField]
     GameEvent fireEvent = null;
+
+    [SerializeField]
+    string fireInputString = "";
 
     private void Start()
     {
@@ -73,7 +73,7 @@ public class Weapon : MonoBehaviour
     protected virtual void Update()
     {
         elapsed += Time.deltaTime;
-        if (isPlayer && Input.GetButton("Fire"))
+        if (isPlayer && !fireInputString.Equals("") && Input.GetButton(fireInputString))
         {
             FireWeapon();
         }
@@ -90,11 +90,11 @@ public class Weapon : MonoBehaviour
         {
             return false;
         }
-        if (isPlayerControlled)
+        if (isPlayer)
         {
             if (triggerFire)
             {
-                return Input.GetButtonDown("Fire");
+                return !fireInputString.Equals("") && Input.GetButtonDown(fireInputString);
             }
             else
             {
